@@ -53,17 +53,17 @@ mkdir -p dist
 npm pack ./plugins/workspace-files --pack-destination ./dist
 ```
 
-`prepack` builds the plugin before the archive is created. For version `0.0.3`, the archive is `dist/dsh-workspace-enhanced-0.0.3.tgz`. Check npm package-name ownership and version availability before publishing. After the changes have been committed and tag `v0.0.3` has been pushed, the same archive can be published to npm and attached to a GitHub Release:
+`prepack` builds the plugin before the archive is created. For version `0.1.2`, the archive is `dist/dsh-workspace-enhanced-0.1.2.tgz`. Check npm package-name ownership and version availability before publishing. After the changes have been committed and tag `v0.1.2` has been pushed, the same archive can be published to npm and attached to a GitHub Release:
 
 ```sh
-npm publish ./dist/dsh-workspace-enhanced-0.0.3.tgz
-gh release create v0.0.3 ./dist/dsh-workspace-enhanced-0.0.3.tgz --verify-tag --title v0.0.3 --generate-notes
+npm publish ./dist/dsh-workspace-enhanced-0.1.2.tgz
+gh release create v0.1.2 ./dist/dsh-workspace-enhanced-0.1.2.tgz --verify-tag --title v0.1.2 --generate-notes
 ```
 
-Once both operations succeed, npm consumers can use `dsh-workspace-enhanced@0.0.3`. The Release archive URL for a catalog entry is:
+Once both operations succeed, npm consumers can use `dsh-workspace-enhanced@0.1.2`. The Release archive URL for a catalog entry is:
 
 ```yaml
-tarball: https://github.com/Zhizhi-2986/dsh-plugins-enhanced/releases/download/v0.0.3/dsh-workspace-enhanced-0.0.3.tgz
+tarball: https://github.com/Zhizhi-2986/dsh-plugins-enhanced/releases/download/v0.1.2/dsh-workspace-enhanced-0.1.2.tgz
 ```
 
 For later releases, update the version, tag, archive filename, and URL together. The URL exists only after the Release asset has been uploaded.
