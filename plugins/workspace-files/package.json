@@ -8,7 +8,7 @@
   "author": "zhizhi-2986",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zhizhi-2986/dsh-plugins.git",
+    "url": "git+https://github.com/Zhizhi-2986/dsh-plugins-enhanced.git",
     "directory": "plugins/workspace-files"
   },
   "exports": {
@@ -61,6 +61,7 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json && tsdown",
+    "prepack": "pnpm run build",
     "bundle": "pnpm run build",
     "test": "tsc -p tsconfig.json && node --import ./test/register-css.mjs --test test/*.test.mjs"
   },

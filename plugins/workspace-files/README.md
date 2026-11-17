@@ -44,6 +44,30 @@ pnpm --filter dsh-workspace-enhanced build
 
 The plugin targets DSH Desktop only. `dsh.client.platform: web` is the Desktop renderer transport and does not promise standalone DSH Web support. Component tests run in jsdom and slot tests use `SlotCore`; neither proves behavior inside a running Desktop instance. No Desktop profile is changed by build or test commands.
 
+## Package and release
+
+From the repository root, create the archive used for both distribution channels:
+
+```sh
+mkdir -p dist
+npm pack ./plugins/workspace-files --pack-destination ./dist
+```
+
+`prepack` builds the plugin before the archive is created. For version `0.0.3`, the archive is `dist/dsh-workspace-enhanced-0.0.3.tgz`. Check npm package-name ownership and version availability before publishing. After the changes have been committed and tag `v0.0.3` has been pushed, the same archive can be published to npm and attached to a GitHub Release:
+
+```sh
+npm publish ./dist/dsh-workspace-enhanced-0.0.3.tgz
+gh release create v0.0.3 ./dist/dsh-workspace-enhanced-0.0.3.tgz --verify-tag --title v0.0.3 --generate-notes
+```
+
+Once both operations succeed, npm consumers can use `dsh-workspace-enhanced@0.0.3`. The Release archive URL for a catalog entry is:
+
+```yaml
+tarball: https://github.com/Zhizhi-2986/dsh-plugins-enhanced/releases/download/v0.0.3/dsh-workspace-enhanced-0.0.3.tgz
+```
+
+For later releases, update the version, tag, archive filename, and URL together. The URL exists only after the Release asset has been uploaded.
+
 ## Attribution and license
 
 This plugin adapts UI and editor patterns from [SupaNexus/dsh-plugin-file-explorer](https://github.com/supanexus/dsh-plugin-file-explorer), licensed under MIT. The upstream license notice is retained in [`LICENSE`](LICENSE). Workspace scoping and search use DSH's current APIs.
