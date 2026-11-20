@@ -24,7 +24,6 @@ The filesystem boundary in DSH `0.2.1-rc.2` has a documented ancestor-symlink ra
 ```text
 plugins/
   workspace-files/   # Workspace search, editing, creation, replacement, and Preview
-  hello-plugin/      # Minimal installable DSH bundle example
 ```
 
 ## Develop
@@ -45,8 +44,6 @@ pnpm --filter dsh-workspace-enhanced build
 ```
 
 The plugin's dependency baseline is DSH `0.2.1-rc.2`. Tests use mocks and jsdom/SlotCore; they do not establish behavior in a running Desktop instance. See [validation evidence](plugins/workspace-files/VALIDATION.md) for the recorded checks and their scope.
-
-For the starter bundle and local development setup, see [hello-plugin](plugins/hello-plugin/README.md). New plugins should export `name` and `apply(ctx)`, declare required services through `inject`, and include a `cordis.patch.yml` patch and `dsh.bundle` manifest. See the [DSH plugin development guide](https://github.com/anweat/dsh-plugin-dev-guide/blob/main/docs/plugin-development.md) and [publishing guide](https://github.com/anweat/dsh-plugin-dev-guide/blob/main/docs/publishing.md).
 
 ## License
 

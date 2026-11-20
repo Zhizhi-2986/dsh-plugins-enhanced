@@ -8,16 +8,6 @@ importers:
 
   .: {}
 
-  plugins/hello-plugin:
-    dependencies:
-      '@deepseek-ai/cordis':
-        specifier: '*'
-        version: 4.0.5(@deepseek-ai/cordis-plugin-include@1.0.10)(@deepseek-ai/cordis-plugin-loader@1.0.6)
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
   plugins/workspace-files:
     dependencies:
       '@deepseek-ai/schemastery':
